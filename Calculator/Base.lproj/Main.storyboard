@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234567,1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YW-Bh-bKW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YW-Bh-bKW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="1WV-FT-bTn"/>
@@ -212,6 +212,9 @@
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="oneButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbA-ky-BUw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69G-wy-rD6">
                                         <rect key="frame" x="96" y="0.0" width="93" height="93"/>
@@ -260,28 +263,34 @@
                                 <rect key="frame" x="0.0" y="469" width="375" height="93"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfO-Id-WZ9">
-                                        <rect key="frame" x="0.0" y="0.0" width="186" height="93"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="93"/>
                                         <color key="backgroundColor" red="0.74095302819999997" green="0.74494016169999999" blue="0.75729554889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="buy-HV-sJO"/>
-                                            <constraint firstAttribute="width" constant="186" id="ulh-7E-3cY"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="186" id="ulh-7E-3cY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="45"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="zeroButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LwK-t0-zHu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxe-cv-9ic">
-                                        <rect key="frame" x="186" y="0.0" width="96" height="93"/>
+                                        <rect key="frame" x="189" y="0.0" width="93" height="93"/>
                                         <color key="backgroundColor" red="0.74095302819999997" green="0.74494016169999999" blue="0.75729554889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="2mD-pC-ovo"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="sOU-Kn-c7p"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="93" id="sOU-Kn-c7p"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="45"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="dotButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uKq-TD-UmM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8a5-gD-RGk">
                                         <rect key="frame" x="282" y="0.0" width="93" height="93"/>
@@ -331,8 +340,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="divisionBytton" destination="gmm-JE-Jcy" id="WR2-p6-bEL"/>
+                        <outlet property="dotButton" destination="Gxe-cv-9ic" id="oOW-uc-bCP"/>
+                        <outlet property="equalButton" destination="8a5-gD-RGk" id="4qy-zl-8Xz"/>
                         <outlet property="labelResult" destination="4YW-Bh-bKW" id="ZGH-rP-6gA"/>
+                        <outlet property="minusButton" destination="4KU-bE-vvf" id="CKO-Pf-IBN"/>
+                        <outlet property="multiplicationButton" destination="gZd-xo-nHz" id="rI8-As-vlr"/>
+                        <outlet property="numberEightButton" destination="oPG-8m-tvE" id="IxD-cL-Jbf"/>
+                        <outlet property="numberFiveButton" destination="U7Z-9g-G6n" id="Hno-TB-Lzg"/>
+                        <outlet property="numberFourButton" destination="50a-vu-wD2" id="aYm-EF-qTP"/>
+                        <outlet property="numberNineButton" destination="GRI-ma-mLE" id="L5p-pL-2FA"/>
+                        <outlet property="numberOneButton" destination="Da6-9Q-e2L" id="Pyf-WX-Cdq"/>
+                        <outlet property="numberSevenButton" destination="Sa0-YM-uJV" id="HvA-lO-7C4"/>
+                        <outlet property="numberSixButton" destination="lIb-CL-PRA" id="RKm-Tc-3gO"/>
+                        <outlet property="numberThreeButton" destination="VTr-hO-jEb" id="lIg-cH-2Q5"/>
+                        <outlet property="numberTwoButton" destination="69G-wy-rD6" id="Qdw-Tm-xbs"/>
+                        <outlet property="numberZeroButton" destination="mfO-Id-WZ9" id="X2o-Ap-qAj"/>
                         <outlet property="persentBotton" destination="fre-TM-RW9" id="kiH-p8-GdX"/>
+                        <outlet property="plusBuuton" destination="Gh8-PS-Mh7" id="sXt-7V-TFx"/>
                         <outlet property="plusMinusBotton" destination="D0f-GO-SGW" id="3Bk-Ol-mKn"/>
                         <outlet property="resetBotton" destination="uai-IY-RB1" id="nSl-A0-3dx"/>
                     </connections>
